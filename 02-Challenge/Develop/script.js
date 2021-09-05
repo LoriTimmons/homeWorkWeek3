@@ -1,6 +1,6 @@
 // need to generate 10 charters 
 
-
+const buttonClick = window.confirm ('Would you like to create a password');
 const useLowerCase = window.confirm ("Would you like to use lower case letters?");
 const useUpperCase = window.confirm ("Would you like to use upper case letters? ");
 const useSpecialCharacter = window.confirm ("Would you like to use special characters?")
