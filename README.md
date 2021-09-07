@@ -4,8 +4,8 @@ Lori Timmons
 
 
 <!-- ScreenShot -->
-![Screen shot 1](assets/Screen Shot 1.png)
-![Screen shot 1](assets/Screen Shot 2.png))
+![Screen shot 1]("./Assets/images/Screen Shot 1.png")
+![Screen shot 1]("./Assets/images/Screen Shot 2.png")
 
 URL of the deployed application:
 
