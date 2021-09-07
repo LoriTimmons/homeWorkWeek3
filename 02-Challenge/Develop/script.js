@@ -5,46 +5,46 @@ let useSpecialCharacter;
 let useNumbers;
 let passwordLength;
 
-// Random number function 
+// Random number function ✅
 function getRandomNumber(max){
   return (Math.floor(Math.random()* max))
 }
 
-// random lower case char function 🚫
+// random lower case char function ✅
 function getMeARandomLowerCaseChar() {
-const arr = ['a', 'b', 'c'];
+const arr = ['a', 'b', 'c', 'd', 'e', 'f','g','h','i','j','k','l','m','o','p','q','r','s','t','u','v','w','x','y','z' ];
 const index = getRandomNumber(arr.length);
 return arr[index];
 }
 
-// random upper case char function 🚫
+// random upper case char function ✅
 function getMeARandomUpperCaseChar() {
-  const arr = ['A', 'B', 'C'];
+  const arr = ['A', 'B', 'C','D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' ];
   const index = getRandomNumber(arr.length);
   return arr[index];
   }
 
-//random special char 🚫
+//random special char ✅
 function getMeARandomSpecialChar() {
-  const arr = ['!', '@', '#'];
+  const arr = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '+', '='];
   const index = getRandomNumber(arr.length);
   return arr[index];
   }
 
-// random character function add other spec.🚫
+// random character function add other spec.✅
 function getMeARandomCharacter() {
 const arr = [getMeARandomLowerCaseChar, getMeARandomUpperCaseChar, getMeARandomSpecialChar];
 const index = getRandomNumber(arr.length);
 return arr[index]();
 }
 
-// build get random number 
+// build get random number ✅
 function getMeARandomNumber() {
-  const arr = [1 , 2, 3, 4];
+  const arr = [1 , 2, 3, 4, 5, 6, 7, 8, 9];
   const index = getRandomNumber(arr.length);
   return arr[index];
   }
-// window.alert(password);
+
 
 function generatePassword(){
   passwordLength = window.prompt ("Enter Password length (between 8 - 128 Characters)");
@@ -89,11 +89,7 @@ return password;
 }
 
 
-// // Assignment 
-// // Assignment Code
-// // capture the 5 prompts 
-// // write window confirm to ask all the questions. 
-// // Write password to the #password input
+
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -101,6 +97,11 @@ function writePassword() {
   passwordText.value = password;
 
 }
-
 // // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+// // Assignment 
+// // Assignment Code
+// // capture the 5 prompts 
+// // write window confirm to ask all the questions. 
+// // Write password to the #password input
