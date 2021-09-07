@@ -1,18 +1,16 @@
-// need to generate 10 charters 
-
-const buttonClick = window.confirm ('Would you like to create a password');
-const useLowerCase = window.confirm ("Would you like to use lower case letters?");
-const useUpperCase = window.confirm ("Would you like to use upper case letters? ");
-const useSpecialCharacter = window.confirm ("Would you like to use special characters?")
-const useNumbers = window.confirm ("Would you like to use numbers?");
-const passwordLength = window.prompt ("Enter Password length (between 8 - 128 Characters)");
+var generateBtn = document.querySelector("#generate");
+let useLowerCase;
+let useUpperCase;
+let useSpecialCharacter;
+let useNumbers;
+let passwordLength;
 
 // Random number function 
 function getRandomNumber(max){
   return (Math.floor(Math.random()* max))
 }
 
-// random lower case char function 
+// random lower case char function 🚫
 function getMeARandomLowerCaseChar() {
 const arr = ['a', 'b', 'c'];
 const index = getRandomNumber(arr.length);
@@ -40,31 +38,69 @@ const index = getRandomNumber(arr.length);
 return arr[index]();
 }
 
-// Password length 
+// build get random number 
+function getMeARandomNumber() {
+  const arr = [1 , 2, 3, 4];
+  const index = getRandomNumber(arr.length);
+  return arr[index];
+  }
+// window.alert(password);
+
+function generatePassword(){
+  passwordLength = window.prompt ("Enter Password length (between 8 - 128 Characters)");
+  if(passwordLength < 8){
+    alert("Must be greater than 8 characters")
+    return 
+  }
+
+  if(passwordLength > 128) {
+    alert("Must be less than 128")
+    return
+  }
+
+  useUpperCase = window.confirm ("Would you like to use upper case letters? ");
+  useLowerCase = window.confirm ("Would you like to use lower case letters?");
+  useNumbers = window.confirm ("Would you like to use numbers?");
+  useSpecialCharacter = window.confirm ("Would you like to use special characters?");
+  // Password length 
 let password = "";
-for (let i = 0; i < passwordLength; i++) {
-  // Work on this line (13) 🚫
+if (useUpperCase === true){
+  password = password + getMeARandomUpperCaseChar();
+}
+if (useLowerCase === true) {
+  password = password + getMeARandomLowerCaseChar();
+}
+if (useNumbers === true) {
+  password = password + getMeARandomNumber();
+}
+if (useSpecialCharacter === true) {
+  password = password + getMeARandomCharacter();
+}
+console.log(password)
+console.log(password.length)
+for (let i = password.length; i < passwordLength; i++) {
+  // Work on this line (13) ✅
 const char = getMeARandomCharacter();
 password = password + char;
 }
 
-window.alert(password);
+console.log(password)
+return password;
+}
 
 
 // // Assignment 
 // // Assignment Code
-// var generateBtn = document.querySelector("#generate");
-
 // // capture the 5 prompts 
 // // write window confirm to ask all the questions. 
 // // Write password to the #password input
-// function writePassword() {
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
 
-//   passwordText.value = password;
+  passwordText.value = password;
 
-// }
+}
 
 // // Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword);
